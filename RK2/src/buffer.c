@@ -8,11 +8,11 @@
 #include "buffer.h"
 
 //initialize buffer
-void InitBuffer(buf* buffer, uint16_t* address, uint16_t size) {
+void InitBuffer(buf* buffer, uint8_t* address, uint16_t size) {
 	buffer->buf = address; //set address of buf
 	//buffer is empty so read_point and write_point are in the beginning
 	buffer->read_point = buffer->write_point = 0;
-	//set size of buffer, in our case it is 1024 bytes
+	//set size of buffer
 	buffer->buf_size = size;
 	//buffer is empty so
 	buffer->amount_data_in_buf = 0;

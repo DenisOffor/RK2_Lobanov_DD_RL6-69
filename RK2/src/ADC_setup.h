@@ -11,7 +11,6 @@
 #include "stm32f0xx.h"
 #include "Variables.h"
 
-
 void init_ADC();
 void init_DMA_for_ADC();
 void init_tim15_as_TRGO();

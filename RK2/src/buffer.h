@@ -22,7 +22,7 @@ typedef struct RingBuf_c {
 //functions
 
 //initialize buffer
-void InitBuffer(buf* buffer, uint16_t* address, uint16_t size);
+void InitBuffer(buf* buffer, uint8_t* address, uint16_t size);
 
 //add data to the end of the buffer meanwhile write_point++
 void Buffer_add_to_end(buf* buffer, uint8_t data);

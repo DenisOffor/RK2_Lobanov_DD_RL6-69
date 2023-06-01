@@ -10,7 +10,8 @@
 void DMA1_Channel1_IRQHandler() {
 	DMA1->IFCR |= DMA_IFCR_CTCIF1;
 	if(!(DMA1_Channel1->CCR & DMA_CCR_CIRC)) //if it's not infinite data transfer
-		DMA1_Channel1->CCR &= ~ DMA_CCR_EN;  //turn off DMA channel when sufficient amount of data is transfered
+		//turn off DMA channel when sufficient amount of data is transfered
+		DMA1_Channel1->CCR &= ~ DMA_CCR_EN;
 }
 
 
@@ -22,7 +23,7 @@ void init_ADC() {
 	RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;
 	RCC->CR2 |= RCC_CR2_HSI14ON;
 	//sampling time selection
-	ADC1->SMPR |= ADC_SMPR1_SMPR;
+	ADC1->SMPR &= ~ADC_SMPR1_SMPR;
 	//channel 1 selection
 	ADC1->CHSELR |= ADC_CHSELR_CHSEL0;
 	//work with DMA enable:
